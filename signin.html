@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/signin.css" type="text/css">
+    <link rel="Shortcut Icon" href="img/favicon.ico" type="image/x-icon" />
+    <title>注册成为用户</title>
+</head>
+
+<body>
+    <div class="layout">
+    <main>
+        <div id="reg" data-v-ff518656="">
+            <!--背景-->
+            <div class="reg-bg" data-v-ff518656="">
+
+            </div> 
+            <div class="reg-container" data-v-ff518656="">
+                <div class="reg-wrapper" data-v-ff518656="">
+                    <!--表格页眉-->
+                    <div class="reg-head" data-v-ff518656="">
+                        <!--***这里是logo图片位置***-->
+                        <img src="img/hitsz.png" class="reg-logo" data-v-ff518656="">
+                        <!--表格名称--> 
+                        <span class="reg-title" data-v-ff518656="">注册</span> 
+                        <!--***返回其他页面***-->
+                        <a href="login.html" class="return-to-login" data-v-ff518656="">返回登录</a>
+                    </div>
+                    <!--填表清单-->
+                    <div class="reg-form-wrapper" data-v-ff518656="">
+                        <form class="reg-form" action="signin.php" method="POST">
+                            <!--单个输入元素--> 
+                            <div class=" form-item">
+                                <!--输入元素样式-->
+                                <span class="reg-input input-wrapper input-group input-group-prepend">
+                                    <!--***图标***-->
+                                    <div class="input-prepend">
+                                        <!--图片宽31高41-->
+                                        <img src="img/username.PNG">
+                                    </div> 
+                                    <!--***输入框调整提示语和输入类型***-->
+                                    <input placeholder="请输入用户名" autocomplete="new-password" minlength="" maxlength="" type="text" value="" class="input" id="username" name="username"> 
+                                </span> 
+                            </div> 
+                            <!--单个输入元素--> 
+                            <div class=" form-item">
+                                <!--输入元素样式-->
+                                <span class="reg-input input-wrapper input-group input-group-prepend">
+                                    <!--***图标***-->
+                                    <div class="input-prepend">
+                                        <!--图片宽31高41-->
+                                        <img src="img/stuNum.PNG">
+                                    </div> 
+                                    <!--***输入框调整提示语和输入类型***-->
+                                    <input placeholder="请输入学号" autocomplete="new-password" minlength="" maxlength="" type="text" value="" class="input" id="stuNum" name="stuNum"> 
+                                </span> 
+                            </div> 
+                            <!--单个输入元素--> 
+                            <div class=" form-item">
+                                <!--输入元素样式-->
+                                <span class="reg-input input-wrapper input-group input-group-prepend">
+                                    <!--***图标***-->
+                                    <div class="input-prepend">
+                                        <!--图片宽31高41-->
+                                        <img src="img/password.PNG">
+                                    </div> 
+                                    <!--***输入框调整提示语和输入类型***-->
+                                    <input placeholder="请输入密码" autocomplete="new-password" minlength="" maxlength="" type="password" value="" class="input" id="password" name="password"> 
+                                </span> 
+                            </div> 
+                            <!--单个输入元素--> 
+                            <div class=" form-item">
+                                <!--输入元素样式-->
+                                <span class="reg-input input-wrapper input-group input-group-prepend">
+                                    <!--***图标***-->
+                                    <div class="input-prepend">
+                                        <!--图片宽31高41-->
+                                        <img src="img/password.PNG">
+                                    </div> 
+                                    <!--***输入框调整提示语和输入类型***-->
+                                    <input placeholder="请再次输入密码" autocomplete="new-password" minlength="" maxlength="" type="password" value="" class="input" id="confirm" name="confirm"> 
+                                </span> 
+                            </div> 
+                            <!--验证码元素-->
+                            <div class="form-item">
+                                <span class="reg-input reg-textcode input-wrapper input-group input-group-prepend input-suffix">
+                                    <div class="input-prepend">
+                                        <div class="input-prepend">
+                                            <!--图片宽31高41-->
+                                            <img src="img/checkNum.PNG">
+                                        </div> 
+                                    </div> 
+                                    <!--***验证码输入框***-->
+                                    <input placeholder="请输入验证码" autocomplete="new-password" minlength="" maxlength="" type="text" value="" class="input" id="checkNum" name="checkNum"> 
+                                    <div class="input-suffix-item">       
+                                        <a href="javascript:changeCode()" class=" get-text-code">
+                                            <img src="validcode.php" style="width:100px;height:25px;" id="code">
+                                            看不清，换一张
+                                        </a>
+                                    </div>
+                                </span> 
+                            </div>
+                            <!--***提交按钮***-->
+                                <button type="submit" value="注册" name="submit" class="reg-submit">
+                                    注册
+                                </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</div>
+        <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            //点击图片更新验证码
+            function changeCode() {
+
+               document.getElementById("code").src = "validcode.php?id=" + Math.random();
+            }
+        </script>
+    </body>
+</html>

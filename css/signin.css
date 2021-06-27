@@ -1,0 +1,175 @@
+
+.layout>main {
+    min-height: calc(100vh - 400px);
+}
+#reg[data-v-ff518656] {
+    position: relative;
+}
+#reg .reg-bg[data-v-ff518656] {
+    /*!!!这里是背景图片!!!*/
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 810px;
+    min-width: 1000px;
+    z-index: -10;
+    /* 背景图片设置 */
+    background-image: url(../img/background.png);
+    zoom: 1;
+    background-color: #ffff;
+    background-repeat: no-repeat;
+    background-position: center 0;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+}
+#reg .reg-container[data-v-ff518656] {
+    width: 1280px;
+    height: 680px;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    margin-left: -640px;
+}
+#reg .reg-container .reg-wrapper[data-v-ff518656] {
+    /*表格位置*/
+    position: absolute;
+    top: 90px;
+    left: 650px;
+    /*表格大小*/
+    width: 440px;
+    height: 522px;
+    box-sizing: border-box;
+    padding: 30px;
+    font-size: 0;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px 0 rgba(#000,#000,#000,.3);
+}
+#reg .reg-container .reg-wrapper .reg-head .reg-logo[data-v-ff518656] {
+    /*logo图片大小*/
+    width: 95px;
+    height: 30px;
+    vertical-align: bottom;
+}
+#reg .reg-container .reg-wrapper .reg-head .reg-title[data-v-ff518656] {
+    /*表格名称大小样式*/
+    display: inline-block;
+    vertical-align: bottom;
+    margin-left: 10px;
+    font-size: 16px;
+    line-height: 24px;
+    height: 24px;
+    font-weight: 700;
+}
+#reg .reg-container .reg-wrapper .reg-head .return-to-login[data-v-ff518656] {
+    /*超链接文字样式*/
+    /*表格名字变动时调整该数值齐平*/
+    margin-left: 170px;
+    vertical-align: bottom;
+    font-size: 14px;
+    line-height: 24px;
+    height: 24px;
+    color: #409bef;
+    text-decoration: none;
+}
+.reg-form-wrapper {
+    position: relative;
+}
+.reg-form-wrapper .reg-form {
+    /*填表清单位置样式*/
+    padding: 20px 10px 0;
+}
+.reg-form-wrapper .reg-form .form-item {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+}
+.reg-form-wrapper .reg-form .form-item .reg-input {
+    /*表格输入元素间距*/
+    margin-top: 20px;
+    /*表格输入元素下划线*/
+    border-bottom: 1px solid #ccc;
+}
+
+.input-group {
+    /*调整图标与填写位置水平*/
+    display: inline-table;
+    /*保证输入元素下划线长度相同*/
+    width: 100%;
+}
+.input-wrapper {
+    /*文字贴紧下划线*/
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+}
+.input-group .input-prepend {
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.input-group .input-append, .input-group .input-prepend {
+    /*图标紧贴下划线*/
+    display: table-cell;
+    border-right: none;
+    border-radius: 3px;
+    /*位置*/
+    vertical-align: middle;
+    position: relative;
+    /*提示字与图标间隔*/
+    width: 1px;
+    white-space: nowrap;
+}
+.reg-form-wrapper .reg-form .form-item .reg-input .icon {
+    /*微调图片高度*/
+    font-size: 24px;
+    line-height: 24px;
+    width: 24px;
+    height: 24px;
+}
+.reg-form-wrapper .reg-form .form-item .reg-input .input {
+    /*输入框*/
+    border: none;
+    outline: none;
+    padding: 0;
+    margin: 0 0 0 10px;
+    color: #333;
+    height: 39px;
+    line-height: 40px;
+}
+.reg-form-wrapper .reg-form .form-item .reg-input.reg-textcode .input-suffix-item {
+    right: 10px;
+}
+.input-suffix-item {
+    position: absolute;
+    height: 100%;
+    right: 5px;
+    top: 0;
+    text-align: center;
+    color: #c0c4cc;
+    transition: all .3s;
+    line-height: 30px;
+}
+.reg-form-wrapper .reg-form .form-item .reg-input.reg-textcode .get-text-code {
+    margin-left: 20px;
+    font-size: 14px;
+    line-height: 20px;
+    vertical-align: bottom;
+    color: #fd4c5d;
+    cursor: pointer;
+}
+.reg-form-wrapper .reg-form .reg-submit {
+    margin: 50px 0 10px;
+    width: 360px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    background-color: rgb(67, 202, 255);
+}
