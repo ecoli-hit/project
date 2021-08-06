@@ -14,7 +14,7 @@
     $dbServername="localhost";
     $dbUsername="root";
     $dbPassword="root";
-    $dbName="users";
+    $dbName="user";
     //建立链接
     $conn=mysqli_connect($dbServername,$dbUsername,$dbPassword,$dbName)
             or die("connect failed");  
