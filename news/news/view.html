@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>View</title>
+
+    <link rel="stylesheet" href="./md/css/editormd.css" />
+    <link rel="stylesheet" href="./md/css/style.css"/>
+    <link rel="shortcut icon" href="https://pandao.github.io/editor.md/favicon.ico" type="image/x-icon" />
+
+    <script src="./js/jquery.min.js"></script>
+    <script src="./md/editormd.js"></script>
+    <script src="./md/lib/marked.min.js"></script>
+    <script src="./md/lib/prettify.min.js"></script>
+    <script src="./md/lib/raphael.min.js"></script>
+    <script src="./md/lib/underscore.min.js"></script>
+    <script src="./md/lib/sequence-diagram.min.js"></script>
+    <script src="./md/lib/flowchart.min.js"></script>
+    <script src="./md/lib/jquery.flowchart.min.js"></script>
+
+</head>
+<body>
+    <dev id="test-editormd-view">
+        <textarea style="display:none;" name="view-content-markdown-doc"></textarea>
+    </dev>
+</body>
+
+<script type="text/javascript">
+    $(function() {
+        var testEditormdView;
+        $.get("data.txt",function(markdown) {
+                testEditormdView = editormd.markdownToHTML("test-editormd-view", {
+                width: "95%",
+                height: 700,
+                path: "./md/lib/",
+                preview: true,
+                watch: true,
+                editor: false,
+                markdown        : markdown,
+                htmlDecode      : "style,script,iframe",  // you can filter tags decode
+                tocm            : true,
+                emoji           : true,
+                taskList        : true,
+                tex             : true,  // 默认不解析
+                flowChart       : true,  // 默认不解析
+                sequenceDiagram : true,  // 默认不解析
+                });
+            }
+        );
+    });
+</script>
+
+</html>

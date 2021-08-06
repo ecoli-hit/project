@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>Editor</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="./md/css/style.css" />
+    <link rel="stylesheet" href="./md/css/editormd.css" />
+    <link rel="stylesheet" href="./md/css/editormd.preview.css"/>
+    <link rel="shortcut icon" href="https://pandao.github.io/editor.md/favicon.ico" type="image/x-icon" />
+
+    <script src="./js/jquery.min.js"></script>
+    <script src="./md/editormd.js"></script>
+    <script src="./md/lib/marked.min.js"></script>
+    <script src="./md/lib/prettify.min.js"></script>
+    <script src="./md/lib/raphael.min.js"></script>
+    <script src="./md/lib/underscore.min.js"></script>
+    <script src="./md/lib/sequence-diagram.min.js"></script>
+    <script src="./md/lib/flowchart.min.js"></script>
+    <script src="./md/lib/jquery.flowchart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" ></script> 
+
+</head>
+<body>
+    <form action="index.php" method="POST">
+        <div>
+            标题：<input type="text" name="title">
+        </div>
+        <div>
+            作者：<input type="text" name="author">
+        </div>
+        <div id="content">
+            <textarea name="content-markdown-doc" style="display:none;"></textarea>
+            <textarea name="content-html-code" style="display:none;"></textarea>
+        </div>
+        <input type="submit" name="editor" value="提交"/>
+    </form>
+    <br>
+-------------------显示-----------------------
+    <dev id="test-editormd-view">
+        <textarea style="display:none;" name="view-content-markdown-doc"></textarea>
+    </dev>
+</body>
+
+<script type="text/javascript">
+    $(function() {
+        var editor = editormd("content", {
+            width: "95%",
+            height: 640,
+            path : './md/lib/',
+            theme : "light",
+            previewTheme : "light",
+            editorTheme : "pastel-on-light",
+            // markdown : md,
+            codeFold : true,
+            syncScrolling : "single",
+            watch : true,
+            saveHTMLToTextarea : true,    // 注意3：这个配置，方便post提交表单，保存 HTML 到 Textarea
+            searchReplace : true,
+            //watch : false,                // 关闭实时预览
+            htmlDecode : "style,script,iframe|on*",            // 开启 HTML 标签解析，为了安全性，默认不开启
+            //toolbar  : false,             //关闭工具栏
+            //previewCodeHighlight : false, // 关闭预览 HTML 的代码块高亮，默认开启
+            emoji : true,
+            taskList : true,
+            tocm            : true,         // Using [TOCM]
+            tex : true,                   // 开启科学公式TeX语言支持，默认关闭
+            flowChart : true,             // 开启流程图支持，默认关闭
+            sequenceDiagram : true,       // 开启时序/序列图支持，默认关闭,
+            //dialogLockScreen : false,   // 设置弹出层对话框不锁屏，全局通用，默认为true
+            //dialogShowMask : false,     // 设置弹出层对话框显示透明遮罩层，全局通用，默认为true
+            //dialogDraggable : false,    // 设置弹出层对话框不可拖动，全局通用，默认为true
+            //dialogMaskOpacity : 0.4,    // 设置透明遮罩层的透明度，全局通用，默认值为0.1
+            //dialogMaskBgColor : "#000", // 设置透明遮罩层的背景颜色，全局通用，默认为#fff
+            imageUpload : true,
+            imageFormats : ["jpg", "jpeg", "gif", "png", "bmp", "webp","zip","rar"],
+            imageUploadURL : "./upload.php",
+            crossDomainUpload: false,   // 是否启用跨域上传
+            uploadCallbackURL: ".../upload/text_upload",		//上传完成后的回调地址
+            
+            onload : function() {
+                console.log('onload', this);
+                //this.fullscreen();
+                //this.unwatch();
+                //this.watch().fullscreen();
+
+                //this.setMarkdown("#PHP");
+                //this.width("100%");
+                //this.height(480);
+                //this.resize("100%", 640);
+            }
+        });
+        var testEditormdView;
+        $.get("data.txt",function(markdown) {
+                testEditormdView = editormd.markdownToHTML("test-editormd-view", {
+                markdown        : markdown,
+                htmlDecode      : "style,script,iframe",  // you can filter tags decode
+                tocm            : true,
+                emoji           : true,
+                taskList        : true,
+                tex             : true,  // 默认不解析
+                flowChart       : true,  // 默认不解析
+                sequenceDiagram : true,  // 默认不解析
+                });
+            }
+        );
+    });
+</script>
+
+</html>
